@@ -17,23 +17,24 @@ use app\Http\Controllers\DataController;
 
 Route::get('/login', function () {
     return view('user.login');
-})->name('login');
+})->name('login')->middleware('guest');
 
-Route::post('/postlogin','LoginController@postlogin')->name('postlogin');
+Route::post('/postlogin','LoginController@postlogin');
+
 Route::get('/logout','LoginController@logout')->name('logout');
 
-Route::group(['middleware' => ['auth']], function () {
+// Route::group(['middleware' => ['auth']], function () {
 
-route::get('/home','DataController@index');
+// 	route::get('/home','DataController@index');
 
-Route::get('/', function () {
-    return view('welcome');
-});
-});
+// 	Route::get('/', function () {
+// 	    return view('welcome');
+// 	});
+// });
 
 // Route::middleware('auth:user')->group(function(){
 	  // Untuk Route.
-	Route::get('/home','AdminController@home');
+	Route::get('/home','AdminController@home')->middleware("auth");
 // });
 
 
@@ -41,7 +42,7 @@ Route::get('/inputdataa','DataController@index')->name('inputdataa');
 Route::post('/create','DataController@create');	
 Route::get('/item/{id}/edit','DataController@edit');
 Route::post('/item/{id}/update','DataController@update');
-Route::get('/item/{id}/delete','DataController@delete');
+Route::get('/this/{id}/delete','DataController@delete');
 
 Route::get('/transaksimesinedc','TransaksiController@index')->name('transaksimesinedc');
 Route::post('/store','TransaksiController@create');
@@ -59,6 +60,6 @@ Route::get('/cetaklaporantgl/{tglawal}/{tglakhir}','TransaksiController@cetaklap
 
 Route::get('/edctamper','edcTamperController@index');
 Route::post('/createdata','edcTamperController@create');
-Route::get('/item/{id}/delete','edcTamperController@delete');
+Route::get('/itemm/{id}/delete','edcTamperController@delete');
 
 

@@ -85,16 +85,16 @@
 				 		<th>KETERANGAN</th>
 				 		<th>ACT</th>
 				 	</tr>
-				 	@foreach($data_tamper as $item)
+				 	@foreach($data_tamper as $itemm)
 				 		<tr>
-				 		<td>{{$item->sn}}</td>
-				 		<td>{{$item->merek}}</td>
-				 		<td>{{$item->jenis}}</td>
-				 		<td>{{$item->type}}</td>
-				 		<td>{{$item->Kanca}}</td>
-				 		<td>{{$item->keterangan}}</td>
-				 		<td><a href="/item/{{$item->id}}/edit" class="fa fa-edit"></a>				|
-				 			<a href="/item/{{$item->id}}/delete" class="fa fa-trash" style="color: red"></a>
+				 		<td>{{$itemm->sn}}</td>
+				 		<td>{{$itemm->merek}}</td>
+				 		<td>{{$itemm->jenis}}</td>
+				 		<td>{{$itemm->type}}</td>
+				 		<td>{{$itemm->Kanca}}</td>
+				 		<td>{{$itemm->keterangan}}</td>
+				 		<td><a href="/itemm/{{$itemm->id}}/edit" class="fa fa-edit"></a>				|
+				 			<a href="/itemm/{{$itemm->id}}/delete" class="fa fa-trash" style="color: red"></a>
 				 		</td>
 				 	</tr>
 				 	@endforeach
